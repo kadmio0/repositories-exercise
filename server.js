@@ -10,7 +10,7 @@ async function onGetRoot(request, response) {
 }
 
 async function onShowRespositories(request, response) {
-    response.send("repositories");
+    response.render("repositoriesPage");
 }
 
 app.get("/", onGetRoot);
