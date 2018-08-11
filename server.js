@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-
 const port = 3000;
+
+const JSONdata = require("./data.json");
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
