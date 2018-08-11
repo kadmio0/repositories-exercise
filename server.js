@@ -11,7 +11,8 @@ async function onGetRoot(request, response) {
 }
 
 async function onShowRespositories(request, response) {
-    response.render("repositoriesPage");
+    const data = JSONdata.users;
+    response.render("repositoriesPage", { data });
 }
 
 app.get("/", onGetRoot);
