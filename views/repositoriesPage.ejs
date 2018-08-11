@@ -8,9 +8,15 @@
     <title>Repositories</title>
 </head>
 <body>  
-<h1 class="text-center">List of Repositories</h1>    
+<h1 class="text-center">List of Repositories</h1> 
+    <% for(let i=0 ; i < data.length ; i++) { %>   
     <div class="container">  
-    </div>  
+        <img src="<%= data[i].avatar_url %>">  
+        <%= data[i].nickName %> 
+        <%= data[i].name %> 
+        <a href="<%= data[i].github_url %>">Go to repository</a> 
+    </div> 
+    <% } %>  
 </body>
 
 </html>
