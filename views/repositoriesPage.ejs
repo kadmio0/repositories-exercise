@@ -9,17 +9,17 @@
 </head>
 <body>  
 <h1 class="text-center">List of Repositories</h1> 
-    <% for(let i=0 ; i < data.length ; i++) { %>   
+    <% for(let i=0 ; i < usersData.length ; i++) { %>   
     <div class="container"> 
         <table class="table table-hover table-bordered" > 
                 <tr class="row  rounded"> 
                     <td class="col-xs-6 bg-dark text-center">
-                        <img src="<%= data[i].avatar_url %>">
+                        <img src="<%= usersData[i].avatar_url %>">
                     </td> 
                     <td class="col-xs-6 bg-info text-center">
-                        <h3><%= data[i].nickName %></h3>
-                        <p><%= data[i].name %></p>
-                        <a class="btn btn-primary " href="<%= data[i].github_url %>">Go to repository</a>
+                        <h3><%= usersData[i].nickName %></h3>
+                        <p><%= usersData[i].name %></p>
+                        <a class="btn btn-primary " href="<%= usersData[i].github_url %>">Go to repository</a>
                     </td>
                 </tr> 
         </table>

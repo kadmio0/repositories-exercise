@@ -10,14 +10,23 @@ async function onGetRoot(request, response) {
     response.render("index");
 }
 
-async function onShowRespositories(request, response) {
-    const data = JSONdata.users;
-    for (let i = 0; i < data.length; i++) {
-        if (!data[i].avatar_url) {
-            data[i].avatar_url = "./default-avatar.png";
+function userHasAvatar(userAvatar) {
+    return userAvatar;
+}
+
+function assignDefaultAvatarTo(users) {
+    for (let i = 0; i < users.length; i++) {
+        if (!userHasAvatar(users[i].avatar_url)) {
+            users[i].avatar_url = "./default-avatar.png";
         }
     }
-    response.render("repositoriesPage", { data });
+    return users;
+}
+
+async function onShowRespositories(request, response) {
+    const usersData = JSONdata.users;
+    assignDefaultAvatarTo(usersData);
+    response.render("repositoriesPage", { usersData });
 }
 
 app.get("/", onGetRoot);
