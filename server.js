@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 
 const port = 3000;
-
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 async function onGetRoot(request, response) {
     response.send("Hello world");
