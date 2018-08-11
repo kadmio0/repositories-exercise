@@ -10,6 +10,7 @@ async function onGetRoot(request, response) {
 }
 
 app.get("/", onGetRoot);
+app.get("/repositories", onShowRespositories);
 
 async function startServer() {
     app.listen(port);
