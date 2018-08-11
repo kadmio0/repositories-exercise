@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="/stylesRepositories.css"> 
+    <title>Repositories</title>
+</head>
+<body>  
+    <h1 class="text-center">List of Repositories</h1> 
+    <% for(let i=0 ; i < usersData.length ; i++) { %>   
+    <div class="container"> 
+        <table class="table table-hover table-bordered" > 
+                <tr class="row  rounded"> 
+                    <td class="col-xs-6 bg-dark text-center">
+                        <img src="<%= usersData[i].avatar_url %>">
+                    </td> 
+                    <td class="col-xs-6 bg-info text-center">
+                        <h3><%= usersData[i].nickName %></h3>
+                        <p><%= usersData[i].name %></p>
+                        <a class="btn btn-primary " href="<%= usersData[i].github_url %>">Go to repository</a>
+                    </td>
+                </tr> 
+        </table>
+    </div> 
+    <% } %>  
+</body> 
+</html>
