@@ -10,13 +10,14 @@ async function onGetRoot(request, response) {
     response.render("index");
 }
 
-function userHasAvatar(userAvatar) {
-    return userAvatar;
+function userHasAvatar(user) {
+    return user.avatar_url;
 }
 
 function assignDefaultAvatarTo(users) {
     for (let i = 0; i < users.length; i++) {
-        if (!userHasAvatar(users[i].avatar_url)) {
+        const user = users[i];
+        if (!userHasAvatar(user)) {
             users[i].avatar_url = "./default-avatar.png";
         }
     }
