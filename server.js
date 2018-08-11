@@ -6,7 +6,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 async function onGetRoot(request, response) {
-    response.send("Hello world");
+    response.render("index");
 }
 
 app.get("/", onGetRoot);
