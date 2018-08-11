@@ -9,6 +9,10 @@ async function onGetRoot(request, response) {
     response.render("index");
 }
 
+async function onShowRespositories(request, response) {
+    response.send("repositories");
+}
+
 app.get("/", onGetRoot);
 app.get("/repositories", onShowRespositories);
 
