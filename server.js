@@ -12,6 +12,11 @@ async function onGetRoot(request, response) {
 
 async function onShowRespositories(request, response) {
     const data = JSONdata.users;
+    for (let i = 0; i < data.length; i++) {
+        if (!data[i].avatar_url) {
+            data[i].avatar_url = "./default-avatar.png";
+        }
+    }
     response.render("repositoriesPage", { data });
 }
 
